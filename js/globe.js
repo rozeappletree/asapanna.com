@@ -20,7 +20,7 @@ function init() {
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.01, 1000)
-    camera.position.set(0, 0, 230);
+    camera.position.set(0, 0, 350);
 
     const directionalLight = new THREE.DirectionalLight("#fff", 2);
     directionalLight.position.set(0, 50, -20);
