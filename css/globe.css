@@ -17,18 +17,20 @@ canvas {
     height: 100vh;
 }
 
-#asapanna {
-    font: 32px 'Lobster', serif;
-    background: #ffffff;
-    color: #000000;
-
+#wrapper {
     position: absolute;
     bottom: 50%;
     left: 50%;
     text-align: center;
+}
+
+#asapanna {
+    font: 52px 'Lobster', serif;
+    background: #000000c5;
+    color: #ff4066;
 
     transform: translateX(-50%);
-    border: 1px solid white;
+    border: 1px solid rgba(0, 0, 0, 0.119);
     border-radius: 5px;
     padding: 0.5rem 0.9em;
     -webkit-font-smoothing: antialiased;
@@ -38,5 +40,44 @@ canvas {
 }
 
 #asapanna:hover {
-    color: #ff4066;
+    background: white;
+}
+
+#asapanna:after {
+    content: "Asapanna";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: -100%;
+    }
+}
+
+#links {
+    float: left;
+    clear: left;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+
+.coming-soon {
+    color: white;
+    font-weight: 200;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: underline;
 }
