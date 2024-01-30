@@ -17,20 +17,24 @@ canvas {
     height: 100vh;
 }
 
-#wrapper {
+/* #wrapper {
     position: absolute;
     bottom: 50%;
     left: 50%;
     text-align: center;
-}
+} */
 
 #asapanna {
-    font: 52px 'Lobster', serif;
+    font: 44px 'Lobster', serif;
     background: #000000c5;
     color: #ff4066;
 
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    text-align: center;
+
     transform: translateX(-50%);
-    border: 1px solid rgba(0, 0, 0, 0.119);
     border-radius: 5px;
     padding: 0.5rem 0.9em;
     -webkit-font-smoothing: antialiased;
@@ -68,15 +72,14 @@ canvas {
     }
 }
 
-#links {
-    float: left;
-    clear: left;
+#coming-soon {
+    position: absolute;
+    bottom: 47%;
+    left: 50%;
+    text-align: center;
     transform: translateX(-50%);
-    margin-top: 10px;
-}
 
-.coming-soon {
-    color: white;
+    color: rgba(255, 255, 255, 0.71);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     text-decoration: underline;
