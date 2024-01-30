@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="./css/globe.css">
   <script>
     var elem = document.documentElement;
-    function myFunction() {
+    function fullscreen() {
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
       } else if (elem.webkitRequestFullscreen) { /* Safari */
@@ -27,7 +27,7 @@
   </script>
 </head>
 
-<body onclick="myFunction()">
+<body onclick="fullscreen()">
   <div id="canvas_container"></div>
 
   <div id="asapanna">Asapanna</div>
