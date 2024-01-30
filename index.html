@@ -13,9 +13,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="./css/globe.css">
+  <script>
+    var elem = document.documentElement;
+    function myFunction() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
+  </script>
 </head>
 
-<body>
+<body onclick="myFunction()">
   <div id="canvas_container"></div>
 
   <div id="asapanna">Asapanna</div>
