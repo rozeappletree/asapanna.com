@@ -16,6 +16,10 @@
   <script>
     var elem = document.documentElement;
     function fullscreen() {
+      // Prevent fullscreen if a link in the nav was clicked
+      if (event && event.target.closest && event.target.closest('#footer-nav')) {
+        return;
+      }
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
       } else if (elem.webkitRequestFullscreen) { /* Safari */
@@ -25,6 +29,42 @@
       }
     }
   </script>
+  <style>
+    /* Basic Footer Nav Styling */
+    #footer-nav {
+      position: fixed; /* Keep it visible */
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+      padding: 10px 0;
+      text-align: center; /* Center the list */
+      z-index: 100; /* Ensure it's above the canvas if it covers the whole screen */
+      font-family: sans-serif; /* Use a standard font */
+    }
+
+    #footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-block; /* Allows centering */
+    }
+
+    #footer-nav li {
+      display: inline-block; /* Horizontal layout */
+      margin: 0 15px; /* Spacing between items */
+    }
+
+    #footer-nav a {
+      color: #ffffff; /* White text */
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+
+    #footer-nav a:hover {
+      text-decoration: underline; /* Underline on hover */
+    }
+  </style>
 </head>
 
 <body onclick="fullscreen()">
@@ -32,6 +72,15 @@
 
   <div id="asapanna">Asapanna</div>
   <!-- <div id="coming-soon">Coming Soon</div> -->
+
+  <!-- Footer Navigation Menu -->
+  <nav id="footer-nav">
+    <ul>
+      <li><a href="https://www.asapanna.com/privacy.html" target="_blank">Privacy Policy</a></li>
+      <li><a href="https://www.asapanna.com/tnc.html" target="_blank">Terms and Conditions</a></li>
+      <li><a href="https://www.asapanna.com/refund.html" target="_blank">Refund Policy</a></li>
+    </ul>
+  </nav>
 
   <!-- online -->
   <!-- <script src='https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.min.js'></script>
