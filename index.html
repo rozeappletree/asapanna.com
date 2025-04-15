@@ -1,16 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#ff0033">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#ff0033">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#ff0033">
+  <title>Asapanna.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
+
+  <!-- Globe CSS (Assumed External) -->
+  <link rel="stylesheet" href="./css/globe.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f4f4f4, #eaeaea);
+      color: #333;
+    }
+
+    #asapanna {
+      font-family: 'Lobster', cursive;
+      font-size: 3rem;
+      color: #ff0033;
+      text-align: center;
+      margin: 40px 0 20px 0;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    #asapanna:hover {
+      transform: scale(1.05);
+    }
+
+    #products-services {
+      text-align: center;
+      padding: 60px 20px;
+      background: #fff;
+      border-top: 2px solid #eee;
+      border-bottom: 2px solid #eee;
+    }
+
+    #products-services h2 {
+      color: #222;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    #products-services p {
+      font-size: 1.1em;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    #products-services a {
+      color: #ff0033;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    #products-services a:hover {
+      color: #cc0022;
+      text-decoration: underline;
+    }
+
+    #footer-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 12px 0;
+      text-align: center;
+      z-index: 100;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.95em;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+    }
+
+    #footer-nav li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    #footer-nav a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    #footer-nav a:hover {
+      color: #ffcccb;
+      text-decoration: underline;
+    }
+
+    a, h2, p, #asapanna {
+      transition: all 0.3s ease-in-out;
+    }
+
+    @media (max-width: 600px) {
+      #asapanna {
+        font-size: 2.2rem;
+      }
+
+      #products-services h2 {
+        font-size: 1.5rem;
+      }
+
+      #products-services p {
+        font-size: 1em;
+      }
+    }
+  </style>
+
+  <script>
+    var elem = document.documentElement;
+    function fullscreen() {
+      if (event && event.target.closest && event.target.closest('#footer-nav')) {
+        return;
+      }
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+    }
+  </script>
+</head>
+
 <body onclick="fullscreen()">
   <div id="canvas_container"></div>
 
   <div id="asapanna">Asapanna</div>
 
   <!-- Products and Services Section -->
-  <section id="products-services" style="text-align: center; padding: 40px 20px; font-family: sans-serif; background-color: #f9f9f9;">
-    <h2 style="color: #333;">Products and Services</h2>
-    <p style="font-size: 1.1em; color: #555; max-width: 600px; margin: 0 auto;">
-      Explore our cutting-edge video hiring solution at 
-      <a href="https://amplihire.com/video" target="_blank" style="color: #ff0033; text-decoration: none;">
-        amplihire.com/video
-      </a>. Streamline your recruitment process with video-first technology.
+  <section id="products-services">
+    <h2>Products and Services</h2>
+    <p>
+      Explore our cutting-edge video hiring solution at
+      <a href="https://amplihire.com/video" target="_blank">amplihire.com/video</a>.
+      Streamline your recruitment process with video-first technology.
     </p>
   </section>
 
@@ -26,4 +174,8 @@
   <!-- Scripts -->
   <script src="./threejs/three.min.js"></script>
   <script src="./threejs/OrbitControls.js"></script>
-  <script src="./threejs/simplex-noise.min.js"></script
+  <script src="./threejs/simplex-noise.min.js"></script>
+  <script src="./js/globe.js"></script>
+</body>
+
+</html>
